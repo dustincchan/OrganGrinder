@@ -8,7 +8,6 @@ var addKey = function(keyName){
     _keys.push(keyName);
     KeyStore.__emitChange();
   }
-  console.log(_keys);
 };
 
 var removeKey = function(keyName){
