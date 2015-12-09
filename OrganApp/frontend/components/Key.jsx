@@ -12,18 +12,27 @@ var Key = React.createClass({
   componentDidMount: function(){
     this.token = KeyStore.addListener(function(){
       var keys = KeyStore.all();
-      if (keys.indexOf(this.props.noteName) >= 0) {
+      // console.log(keys);
+      if (keys.indexOf(this.props.keyName) >= 0) {
         this.setState({playing: true});
+        this.note.start();
       } else {
         this.setState({playing: false});
+        this.note.stop();
       }
-    });
+    }.bind(this));
 
     this.note = new Note(TONES[this.props.keyName]);
   },
 
   componentWillUnmount: function(){
     this.token.remove();
+  },
+
+  render: function(){
+    return(<div></div>);
   }
 
 });
+
+module.exports = Key;

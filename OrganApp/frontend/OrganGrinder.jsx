@@ -6,6 +6,8 @@ var Key = require('./components/Key.jsx');
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  KeyListener.keyup();
+  KeyListener.keydown();
   var root = document.querySelector('#root');
   ReactDOM.render(<Key keyName='C4'/>, root);
 });

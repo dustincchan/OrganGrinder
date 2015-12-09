@@ -27,7 +27,6 @@ var Mapping = {
 var KeyListener = {
   keydown: function() {
     $(document).on('keydown', function(event){
-      console.log(event);
       KeyActions.handleKeyDown(Mapping[event.which]);
     });
   },

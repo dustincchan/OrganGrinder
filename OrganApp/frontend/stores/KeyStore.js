@@ -1,15 +1,24 @@
-var KeyStore = require('flux/utils').Store;
+var Store = require('flux/utils').Store;
+var Dispatcher = require('../dispatcher/Dispatcher.js');
+var KeyStore = new Store(Dispatcher);
 var _keys = [];
 
 var addKey = function(keyName){
-  _keys.push(keyName);
-  KeyStore.__emitChange();
+  if (_keys.indexOf(keyName) < 0) {
+    _keys.push(keyName);
+    KeyStore.__emitChange();
+  }
+  console.log(_keys);
 };
 
 var removeKey = function(keyName){
   var idx = _keys.indexOf(keyName);
   _keys.splice(idx, 1);
   KeyStore.__emitChange();
+};
+
+KeyStore.all = function() {
+  return _keys.slice();
 };
 
 KeyStore.__onDispatch = function(payload){
