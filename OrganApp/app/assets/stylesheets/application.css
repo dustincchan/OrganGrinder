@@ -1,3 +1,13 @@
+h1 div span {
+  height: inherit;
+  width: inherit;
+  display: block;
+  position: inherit;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+
 .organ {
   margin: 0 auto;
   width: 1000px;
@@ -6,12 +16,10 @@
   background: #994c00;
 }
 
-/*.organ:after {
-  context: "";
-  display: block;
-  clear: both;
-  background: brown;
-}*/
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
 
 .key {
   background: #f2f2f2;
@@ -31,8 +39,20 @@
     box-shadow: 0px 2px #888888;
 }
 
+.sharp {
+  top: -50px;
+  width: 30px;
+  height: 200px;
+  background: #000000;
+}
+
+.sharp.playing {
+  transform: translateY(5px);
+  background: #404040;
+}
+
 span.keyBoard {
-  left: 120px;
+  left: 150px;
   margin: 0 auto;
   position: relative;
 }

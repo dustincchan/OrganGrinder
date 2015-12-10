@@ -8,6 +8,10 @@ var KeyActions = {
 
   handleKeyUp: function(keyName){
     Dispatcher.dispatch({actionType: 'KEY_UP', noteName: keyName});
+  },
+
+  resetKeys: function(keyArray){
+    Dispatcher.dispatch({actionType: 'RESET_KEYS', keys: keyArray});
   }
 };
 

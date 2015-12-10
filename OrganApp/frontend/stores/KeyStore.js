@@ -16,6 +16,11 @@ var removeKey = function(keyName){
   KeyStore.__emitChange();
 };
 
+var resetKeys= function(keyArray){
+  _keys = keyArray;
+  KeyStore.__emitChange();
+};
+
 KeyStore.all = function() {
   return _keys.slice();
 };
@@ -27,6 +32,9 @@ KeyStore.__onDispatch = function(payload){
       break;
     case 'KEY_UP' :
       removeKey(payload.noteName);
+      break;
+    case 'RESET_KEYS' :
+      resetKeys(payload.keys);
       break;
   }
 };
