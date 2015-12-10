@@ -10,8 +10,11 @@ var Organ = React.createClass({
     });
     return(
       <div className='organ'>
+        <span className='keyBoard'>
         {keys}
+        </span>
       </div>
+
     );
   }
 });

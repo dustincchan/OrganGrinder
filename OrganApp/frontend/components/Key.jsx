@@ -30,7 +30,8 @@ var Key = React.createClass({
   },
 
   render: function(){
-    return(<div></div>);
+    var classList = "key" + (this.state.playing ? " playing" : "");
+    return(<div className={classList}></div>);
   }
 
 });
